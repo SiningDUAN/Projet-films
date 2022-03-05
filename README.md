@@ -9,7 +9,8 @@
 • python (3.6+)
 
 # *Paguets de dépendances*
-requests
+• selenium 
+• requests
 
 # ***Source des données***
 ## *Description des sources de données*
@@ -19,7 +20,7 @@ Le site de données du cinéma UGC à Strasbourg nous montre des informations in
 Le lien vers les données spécifiques est le suivant:
 https://www.ugc.fr/cinema.html?id=30
 
-# *Fichiers de configuration*
+# *Exemple d'utilisation*
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
