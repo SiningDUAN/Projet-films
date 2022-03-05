@@ -198,6 +198,9 @@ if __name__=='__main__':
 * Le code source html obtenu à partir de get_info est donné à la fonction *clean* de data.py, qui est utilisée pour extraire les informations du film
 * Une fois que toutes les informations sur les films ont été extraites, la fonction *save_data* stocke les données dans le fichier results.csv
 
+# *Conclusion*
+* 
+
 # *Remerciements spéciaux*
 * CSDN: une site nous permet de chercher la code
 * le professeur 
