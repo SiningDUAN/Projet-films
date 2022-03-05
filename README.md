@@ -4,20 +4,22 @@
 
 • Il en va de même pour les autres sites web. On peut utiliser cette méthode pour explorer n'importe quel site web.
 
-# Environnement de dévéloppement
+# *Environnement de dévéloppement*
 • macOS or Linux or Windows
 • python (3.6+)
-• selenium
 
+# *Paguets de dépendances*
+requests
 
-# Source des données
-## Description des sources de données 
-Pour réaliser notre projet, on utilise le site de données du cinéma UGC à Strasbourg
-## Source des données pour ce projet
+# ***Source des données***
+## *Description des sources de données*
+Le site de données du cinéma UGC à Strasbourg nous montre des informations instantanées sur tous les films qui sortent en salles à Strasbourg. 
+
+## *Source des données pour ce projet*
 Le lien vers les données spécifiques est le suivant:
 https://www.ugc.fr/cinema.html?id=30
 
-# Fichiers de configuration
+# *Fichiers de configuration*
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -103,11 +105,11 @@ for link in links:
     name = get_name(link)
     grade = get_grade(link)
     print((link,name,grade)) # les noms sont vides
-# Format des données 
+# *Format des données* 
 
-# Mode d'emploi
+# *Mode d'emploi*
 
-# Liste des fonctions
+# *Liste des fonctions*
 > Recherche d'informations sur les sites de cinéma UGC et sauvegarde dans la bibliothèque
 
 # Remerciements spéciaux
