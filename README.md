@@ -200,7 +200,11 @@ if __name__=='__main__':
 
 # *Conclusion*
 * Le type de *drame* obtient un nombre d'étoiles plus élevées
-* 
+* Les films qui sont sortis relativement tôt ont été mieux reçus
+
+# *Applications*
+* Par ces données, on peut obtenir l'information clairement de chaque film
+* On peut utiliser ce méthode qui s'applique aussi aux autres sites
 
 # *Remerciements spéciaux*
 * CSDN: une site nous permet de chercher la code
