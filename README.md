@@ -199,6 +199,7 @@ if __name__=='__main__':
 * Une fois que toutes les informations sur les films ont été extraites, la fonction *save_data* stocke les données dans le fichier results.csv
 
 # *Conclusion*
+* Le type de *drame* obtient un nombre d'étoiles plus élevées
 * 
 
 # *Remerciements spéciaux*
