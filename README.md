@@ -1,19 +1,23 @@
-# Projet: données du site web du film
+# ***Web crawler***
+## *Crawling le contenu du site web des films*
+• Explorer les données relatives aux films et aux utilisateurs, puis utiliser les données explorées pour recommander des films aux utilisateurs. 
 
-# Exigences environnementales
-> macOS or Linux or Windows
-> python (3.6+)
-> pip
+• Il en va de même pour les autres sites web. On peut utiliser cette méthode pour explorer n'importe quel site web.
+
+# Environnement de dévéloppement
+• macOS or Linux or Windows
+• python (3.6+)
+• selenium
+
 
 # Source des données
 ## Description des sources de données 
 Pour réaliser notre projet, on utilise le site de données du cinéma UGC à Strasbourg
 ## Source des données pour ce projet
 Le lien vers les données spécifiques est le suivant:
+https://www.ugc.fr/cinema.html?id=30
 
 # Fichiers de configuration
-###certains packages
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -23,45 +27,34 @@ import time
 import requests
 from bs4 import BeautifulSoup
 import re
-
-###Le chemin jusqu'au chromedriver
-
+#Le chemin jusqu'au chromedriver
 PATH = "/Users/zhangyajie/Downloads/chromedriver 2"
 
-###On précise certaines option
-
+#On précise certaines option
 chrome_options = webdriver.ChromeOptions()
 prefs = {"profile.default_content_setting_values.notifications" : 2}
 chrome_options.add_experimental_option("prefs",prefs)
 driver = webdriver.Chrome(PATH,chrome_options=chrome_options)
 
-###Ouverture de la page web
-
+#Ouverture de la page web
 driver.get('https://www.ugc.fr/cinema.html?id=30') 
 
-###On clique sur 'continue without agreeing'
-
+#On clique sur 'continue without agreeing'
 driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div/div/span").click()
-
-###On cherche maitnenant tout les liens du film sur la page
+##On cherche maitnenant tout les liens du film sur la page
 #on crée une liste vide
-
 links = []
-###On récupère tout les éléments avec des href (les liens) 
-
+#On récupère tout les éléments avec des href (les liens) 
 elems = driver.find_elements_by_xpath("//a[@href]")
-###on ajoute chaque lien a une liste
-
+#on ajoute chaque lien a une liste
 for elem in elems:
     links.append(elem.get_attribute("href"))
 
-###On vérifie qu'il y a bien 'film.htlm?id=' dans le lien, puisque seul ces liens la sont pour un film disponible
-
+#On vérifie qu'il y a bien 'film.htlm?id=' dans le lien, puisque seul ces liens la sont pour un film disponible
 links = {link for link in links if 'film.html?id=' in link}
 links = list(links)
 links
 ###définition d'une fonction get_grade de chaque lien dans la liste de links
-
 def get_grade(link): 
         
     req = requests.get(link)
