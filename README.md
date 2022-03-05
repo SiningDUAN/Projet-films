@@ -20,6 +20,7 @@ Le lien vers les données spécifiques est le suivant:
 https://www.ugc.fr/cinema.html?id=30
 
 # *Exemple d'utilisation*
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
