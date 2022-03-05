@@ -30,6 +30,10 @@ import time
 import requests
 from bs4 import BeautifulSoup
 import re
+import csv
+from data import clean
+```
+```Python
 #Le chemin jusqu'au chromedriver
 PATH = "/Users/zhangyajie/Downloads/chromedriver 2"
 
@@ -38,7 +42,8 @@ chrome_options = webdriver.ChromeOptions()
 prefs = {"profile.default_content_setting_values.notifications" : 2}
 chrome_options.add_experimental_option("prefs",prefs)
 driver = webdriver.Chrome(PATH,chrome_options=chrome_options)
-
+```
+```Python
 #Ouverture de la page web
 driver.get('https://www.ugc.fr/cinema.html?id=30') 
 
@@ -57,6 +62,8 @@ for elem in elems:
 links = {link for link in links if 'film.html?id=' in link}
 links = list(links)
 links
+```
+```Python
 ###définition d'une fonction get_grade de chaque lien dans la liste de links
 def get_grade(link): 
         
@@ -68,10 +75,11 @@ def get_grade(link):
     return grade
 
 ###print tous les liens et les notes d'un file qui est en format de lien 
-for link in links:
+`<for link in links:
     grade = get_grade(link)
-    print((link,grade))
-
+    print((link,grade))>`
+```   
+```Python
 def clear(text):
     soup =  BeautifulSoup(text, 'html.parser')
     soup.find_all('div', class_= "info-wrapper main")
@@ -106,10 +114,8 @@ def clear(text):
     #type
     type=soup.find('p', class_ = 'color--dark-blue').text
     return grade,title,date,type,director,actors,synopsis
-    
-import csv
-from data import clean
-
+```    
+```Python    
 class UGC():
     PATH = './chromedriver.exe'
 
