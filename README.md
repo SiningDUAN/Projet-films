@@ -122,7 +122,7 @@ def clear(text):
     type=soup.find('p', class_ = 'color--dark-blue').text
     return grade,title,date,type,director,actors,synopsis
     
- import csv
+import csv
 from data import clean
 
 class UGC():
