@@ -71,21 +71,6 @@ def get_grade(link):
 for link in links:
     grade = get_grade(link)
     print((link,grade))
-    
-###CHERCHER LE MEILLEUR FILM:
-def best_film(link):
-    
-    req = requests.get(link)
-    soup = BeautifulSoup(req.text, 'html.parser')
-    soup.find_all('div', class_= "info-wrapper main")
-    content = soup.find_all('ul', class_ = 'no-bullets film-score color--main-blue d-none')
-    grade = len(re.findall("plein", str(content)))
-    return grade
-    
-for link in links:
-    grade = best_film(link)
-    best = sorted(grade,reverse=True)  # je veux faire un ordre décroissant avec le 'grade' définit, mais le résultat me montre "TypeError: 'int' object is not iterable"
-    print((link,best))
 
 def clear(text):
     soup =  BeautifulSoup(text, 'html.parser')
@@ -201,10 +186,11 @@ if __name__=='__main__':
  ```   
 
 # *Liste des fonctions*
-* fonction get_links : ouvrir https://www.ugc.fr/cinema.html?id=30 via selenium et récupère tous les liens vers le film
-* Chaque lien de film obtenu via get_links est donné à la fonction get_info, qui ouvre le lien du film avec le module requests et récupère le code source HTML
-* Le code source html obtenu à partir de get_info est donné à la fonction clean de data.py, qui est utilisée pour extraire les informations du film
-* Une fois que toutes les informations sur les films ont été extraites, la fonction save_data stocke les données dans le fichier results.csv
+* La fonction *clean* extrait : le titre du film, la note, la catégorie du film, le réalisateur, l'acteur et le synopsis via deux modules, beautifulsoup et re.
+* fonction *get_links* : ouvrir https://www.ugc.fr/cinema.html?id=30 via selenium et récupère tous les liens vers le film
+* Chaque lien de film obtenu via get_links est donné à la fonction *get_info*, qui ouvre le lien du film avec le module requests et récupère le code source HTML
+* Le code source html obtenu à partir de get_info est donné à la fonction *clean* de data.py, qui est utilisée pour extraire les informations du film
+* Une fois que toutes les informations sur les films ont été extraites, la fonction *save_data* stocke les données dans le fichier results.csv
 
 # *Remerciements spéciaux*
 * CSDN: une site nous permet de chercher la code
