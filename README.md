@@ -1,16 +1,15 @@
 # ***Web crawler***
 ## *Crawling le contenu du site web des films*
-• Explorer les données relatives aux films et aux utilisateurs, puis utiliser les données explorées pour recommander des films aux utilisateurs. 
-
-• Il en va de même pour les autres sites web. On peut utiliser cette méthode pour explorer n'importe quel site web.
+* Explorer les données relatives aux films et aux utilisateurs, puis utiliser les données explorées pour recommander des films aux utilisateurs. 
+* Il en va de même pour les autres sites web. On peut utiliser cette méthode pour explorer n'importe quel site web.
 
 # *Environnement de dévéloppement*
-• macOS or Linux or Windows
-• python (3.6+)
+* macOS or Linux or Windows
+* python (3.6+)
 
 # *Paguets de dépendances*
-• selenium 
-• requests
+* selenium 
+* requests
 
 # ***Source des données***
 ## *Description des sources de données*
