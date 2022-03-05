@@ -20,7 +20,7 @@ Le lien vers les données spécifiques est le suivant:
 https://www.ugc.fr/cinema.html?id=30
 
 # *Exemple d'utilisation*
-
+```Python
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -72,7 +72,6 @@ for link in links:
     grade = get_grade(link)
     print((link,grade))
     
-
 ###CHERCHER LE MEILLEUR FILM:
 def best_film(link):
     
@@ -88,10 +87,7 @@ for link in links:
     best = sorted(grade,reverse=True)  # je veux faire un ordre décroissant avec le 'grade' définit, mais le résultat me montre "TypeError: 'int' object is not iterable"
     print((link,best))
 
-
-
-###CHERCHER LE NOM DES FILMS:
-    
+###CHERCHER LE NOM DES FILMS:    
 def get_name(link):
     
     req = requests.get(link)
@@ -101,16 +97,16 @@ def get_name(link):
     name = re.findall('<h1 class="block--title color--dark-blue text-uppercase>(.*?)</h1>', str(content)) # chercher les contenus entre <h1...> et le premier </h1>
     return name
 
-
 for link in links:
     name = get_name(link)
     grade = get_grade(link)
     print((link,name,grade)) # les noms sont vides
-# *Format des données* 
-
-# *Mode d'emploi*
+ ```   
 
 # *Liste des fonctions*
-> Recherche d'informations sur les sites de cinéma UGC et sauvegarde dans la bibliothèque
+* fonction get_links : ouvrir https://www.ugc.fr/cinema.html?id=30 via selenium et récupère tous les liens vers le film
+* Chaque lien de film obtenu via get_links est donné à la fonction get_info, qui ouvre le lien du film avec le module requests et récupère le code source HTML
+* Le code source html obtenu à partir de get_info est donné à la fonction clean de data.py, qui est utilisée pour extraire les informations du film
+* Une fois que toutes les informations sur les films ont été extraites, la fonction save_data stocke les données dans le fichier results.csv
 
-# Remerciements spéciaux
+# *Remerciements spéciaux*
