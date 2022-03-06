@@ -20,66 +20,11 @@ https://www.ugc.fr/cinema.html?id=30
 
 # *Exemple d'utilisation*
 ```Python
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
-import requests
 from bs4 import BeautifulSoup
 import re
-import csv
-from data import clean
 ```
 ```Python
-#Le chemin jusqu'au chromedriver
-PATH = "/Users/zhangyajie/Downloads/chromedriver 2"
-
-#On précise certaines option
-chrome_options = webdriver.ChromeOptions()
-prefs = {"profile.default_content_setting_values.notifications" : 2}
-chrome_options.add_experimental_option("prefs",prefs)
-driver = webdriver.Chrome(PATH,chrome_options=chrome_options)
-```
-```Python
-#Ouverture de la page web
-driver.get('https://www.ugc.fr/cinema.html?id=30') 
-
-#On clique sur 'continue without agreeing'
-driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div/div/span").click()
-##On cherche maitnenant tout les liens du film sur la page
-#on crée une liste vide
-links = []
-#On récupère tout les éléments avec des href (les liens) 
-elems = driver.find_elements_by_xpath("//a[@href]")
-#on ajoute chaque lien a une liste
-for elem in elems:
-    links.append(elem.get_attribute("href"))
-
-#On vérifie qu'il y a bien 'film.htlm?id=' dans le lien, puisque seul ces liens la sont pour un film disponible
-links = {link for link in links if 'film.html?id=' in link}
-links = list(links)
-links
-```
-```Python
-###définition d'une fonction get_grade de chaque lien dans la liste de links
-def get_grade(link): 
-        
-    req = requests.get(link)
-    soup =  BeautifulSoup(req.text, 'html.parser')
-    soup.find_all('div', class_= "info-wrapper main")
-    content = soup.find_all('ul', class_ = 'no-bullets film-score color--main-blue d-none')
-    grade = len(re.findall("plein", str(content)))
-    return grade
-
-###print tous les liens et les notes d'un file qui est en format de lien 
-`<for link in links:
-    grade = get_grade(link)
-    print((link,grade))>`
-```   
-```Python
-def clear(text):
+def clean(text):
     soup =  BeautifulSoup(text, 'html.parser')
     soup.find_all('div', class_= "info-wrapper main")
     #get grade
@@ -114,7 +59,16 @@ def clear(text):
     type=soup.find('p', class_ = 'color--dark-blue').text
     return grade,title,date,type,director,actors,synopsis
 ```    
-```Python    
+```Python  
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+import requests
+import csv
+from data import clean
+
 class UGC():
     PATH = './chromedriver.exe'
 
