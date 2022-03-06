@@ -68,7 +68,8 @@ import time
 import requests
 import csv
 from data import clean
-
+```
+```Python
 class UGC():
     PATH = './chromedriver.exe'
 
@@ -94,8 +95,8 @@ class UGC():
         'upgrade-insecure-requests': '1',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.62',
     }
-
-
+```
+```Python
     def get_links(self):
         driver = webdriver.Chrome(self.PATH,chrome_options=self.chrome_options)           
         links = []
