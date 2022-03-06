@@ -172,4 +172,4 @@ if __name__=='__main__':
 
 # *Remerciements spéciaux*
 * CSDN: une site nous permet de chercher la code
-* le professeur nous aide beaucoup sur la code
+* Monsieur Pelletier nous aide beaucoup sur la code en cours
