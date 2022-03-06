@@ -18,7 +18,10 @@ Le site de données du cinéma UGC à Strasbourg nous montre des informations in
 Le lien vers les données spécifiques est le suivant:
 https://www.ugc.fr/cinema.html?id=30
 
-# *Exemple d'utilisation*
+# *Mode d'emploi*
+Cet outil se compose de deux scripts:
+1. ***data.py***
+ - La fonction *clean* est définie dans *data.py* pour l'outil d'extraction du code source *html* de l'outil
 ```Python
 from bs4 import BeautifulSoup
 import re
@@ -59,6 +62,8 @@ def clean(text):
     type=soup.find('p', class_ = 'color--dark-blue').text
     return grade,title,date,type,director,actors,synopsis
 ```    
+2. ugc.fr.py
+
 ```Python  
 from selenium import webdriver
 from selenium.webdriver.common.by import By
