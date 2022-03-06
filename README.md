@@ -8,7 +8,6 @@
 * python (3.6+)
 
 # *Paguets de dépendances*
-* selenium 
 * requests
 
 # ***Source des données***
