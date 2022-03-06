@@ -19,8 +19,8 @@ Le lien vers les données spécifiques est le suivant:
 https://www.ugc.fr/cinema.html?id=30
 
 # *Mode d'emploi*
-Cet outil se compose de deux scripts:
-1. ***data.py***
+*Cet outil se compose de deux scripts:*
+***1. data.py***
  - La fonction *clean* est définie dans *data.py* pour l'outil d'extraction du code source *html* de l'outil.
  - La fonction *clean* extrait : le titre du film, la note, la catégorie du film, le réalisateur, l'acteur et le synopsis via deux modules, *beautifulsoup* et *re*.
 ```Python
@@ -63,13 +63,13 @@ def clean(text):
     type=soup.find('p', class_ = 'color--dark-blue').text
     return grade,title,date,type,director,actors,synopsis
 ```    
-2. ugc.fr.py
+***2. ugc.fr.py***
  - C'est le programme principal de l'outil, qui définit une classe UGC, principalement utilisée pour récupérer les liens vers les films depuis ugc.fr et pour obtenir les détails *html* de chaque film.
  - La fonction *main*, qui est la fonction d'exécution de la classe UGC, appelle respectivement les fonctions suivantes:
-    (1) fonction *get_links* : ouvrir https://www.ugc.fr/cinema.html?id=30 via *selenium* et récupère tous les liens vers le film.
-    (2) Chaque lien de film obtenu via *get_links* est donné à la fonction *get_info*, qui ouvrira le lien du film avec le module *requests* et récupérera le code source *HTML*.
-    (3) Le code source *html* obtenu à partir de *get_info* est donné à la fonction *clean* de data.py, qui est utilisée pour extraire les informations du film.
-    (4) Une fois que toutes les informations sur les films ont été extraites, la fonction *save_data* stocke les données dans le fichier *results.csv*.
+      * (1) fonction *get_links* : ouvrir https://www.ugc.fr/cinema.html?id=30 via *selenium* et récupère tous les liens vers le film.
+      * (2) Chaque lien de film obtenu via *get_links* est donné à la fonction *get_info*, qui ouvrira le lien du film avec le module *requests* et récupérera le code source *HTML*.
+      * (3) Le code source *html* obtenu à partir de *get_info* est donné à la fonction *clean* de data.py, qui est utilisée pour extraire les informations du film.
+      * (4) Une fois que toutes les informations sur les films ont été extraites, la fonction *save_data* stocke les données dans le fichier *results.csv*.
   
 ```Python  
 from selenium import webdriver
