@@ -111,6 +111,7 @@ class UGC():
 ```
 ```Python
     def get_links(self):
+        #selenium ouvre un navigateur et ensuite la page
         driver = webdriver.Chrome(self.PATH,chrome_options=self.chrome_options)           
         links = []
         driver.get('https://www.ugc.fr/cinema.html?id=30') 
@@ -128,26 +129,29 @@ class UGC():
         links = list(links)
         driver.quit()
         return links
-
+    #Obtenir des informations sur le film
     def get_info(self,link): 
         req = self.req_driver.get(link)
+        #Passez le code source de la page web à la fonction de nettoyage, récupérez les informations et renvoyez-les
         grade,title,date,type,director,actors,synopsis=clean(req.text)
         return grade,title,date,type,director,actors,synopsis
-    
+    #Save Data
     def save_data(self,results):
         with open('result.csv','w',newline='',encoding='utf-8-sig') as f:
             writer=csv.writer(f)
             writer.writerow(['title','grade','date','type','director','actiors','synopsis'])
             writer.writerows(results)
            
-    def main(self):
+    def main(self):  
         start_time=time.perf_counter()
+        #Obtenir des liens vers des films
         links = self.get_links()
         results=[]
         for link in links:
             grade,title,date,type,director,actiors,synopsis = self.get_info(link)
             print(f'getting info from {link}->title:{title},grade:{grade}')
             results.append([title,grade,date,type,director,actiors,synopsis])
+        #SaveData
         self.save_data(results)
         end_time=time.perf_counter()
         print(f'Finished in {round(end_time-start_time,2)} seconds')
