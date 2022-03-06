@@ -1,6 +1,6 @@
 # ***Web crawler***
 ## *Crawling le contenu du site web des films*
-* Explorer les données relatives aux films et aux utilisateurs, puis utiliser les données explorées pour recommander des films aux utilisateurs. 
+* Le principal axe de recherche de notre groupe est de crawling le site web des film. Nous essayons d'utiliser nos outils pour extraire des données sur les films, telles que la date de sortie, le réalisateur, les acteurs, les étoiles et le genre de chaque film. Les données extraites seront ensuite utilisées pour recommander des films aux utilisateurs et choisir leurs films préférés sans marcher sur le tonnerre.
 * Il en va de même pour les autres sites web. On peut utiliser cette méthode pour explorer n'importe quel site web.
 
 # *Environnement de dévéloppement*
