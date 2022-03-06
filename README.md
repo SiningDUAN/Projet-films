@@ -167,8 +167,8 @@ if __name__=='__main__':
 * Les films qui sont sortis relativement tôt ont été mieux reçus
 
 # *Applications*
-* Par ces données, on peut obtenir l'information clairement de chaque film
-* On peut utiliser ce méthode qui s'applique aussi aux autres sites
+* Par ces données, on peut obtenir des informations clairements et des données complètements de chaque film dans notre result.CSV qui nous permet de choisir un film préféré rapidement.
+* On peut utiliser cet outil qui s'applique aussi aux autres sites
 
 # *Remerciements spéciaux*
 * CSDN: une site nous permet de chercher la code
