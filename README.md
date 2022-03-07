@@ -18,6 +18,12 @@ Le site de données du cinéma UGC à Strasbourg nous montre des informations in
 Le lien vers les données spécifiques est le suivant:
 https://www.ugc.fr/cinema.html?id=30
 
+# ***L'idée générale de crawler***
+* Déterminer le chemin de l'url crawlée, le paramètre headers
+* Envoyer une demande : En utilisant le module de demande de données requests et *headers*, nous envoyons une requête pour l'adresse url du paquet que nous trouvons et obtenons les données de la réponse
+* Analyser les données : extraire le contenu des données que nous voulons
+* Sauvegarder les données 
+
 # *Mode d'emploi*
 *Cet outil se compose de deux scripts:*
 
