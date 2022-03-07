@@ -172,7 +172,7 @@ if __name__=='__main__':
 * Visitez et acceptez la page web
 * Extraction de données à partir de pages web
 * Sauvegarder les données localement 
-* 
+
 # *Conclusion*
 * Le type de *animation* obtient un nombre d'étoiles plus élevées.
 * Les films qui sont sortis relativement tôt ont été mieux reçus.
