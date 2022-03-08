@@ -24,6 +24,9 @@ https://www.ugc.fr/cinema.html?id=30
 * Avant d'extraire les informations, il faut utiliser un outil *selenium* qui permet d'effectuer les tests automatisés sur les navigateurs Web (ici Google chrome). Ensuite, il faut installer un chauffeur Chromedrive
 * Déterminer le chemin de l'url crawlée, le paramètre headers
 * Envoyer une demande : En utilisant le module de demande de données requests et *headers*, nous envoyons une requête pour l'adresse url du paquet que nous trouvons et obtenons les données de la réponse
+    * Le rôle de headers : utilisé pour déguiser le code python sans être reconnu comme un crawler
+![image](https://user-images.githubusercontent.com/100880331/157217530-444a1396-9f18-4d03-ab92-14f06d812494.png)
+
 * Analyser les données : extraire le contenu des données que nous voulons
 * Sauvegarder les données 
 
