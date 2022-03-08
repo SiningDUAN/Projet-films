@@ -21,7 +21,7 @@ Le lien vers les données spécifiques est le suivant:
 https://www.ugc.fr/cinema.html?id=30
 
 # ***L'idée générale de crawler***
-* Avant d'extraire les informations, il faut utiliser un outil *selenium* qui permet d'effectuer les tests automatisiées sur les navigateurs Web (ici Google chrome). Ensuite, il faut installer un chauffeur Chromedrive
+* Avant d'extraire les informations, il faut utiliser un outil *selenium* qui permet d'effectuer les tests automatisés sur les navigateurs Web (ici Google chrome). Ensuite, il faut installer un chauffeur Chromedrive
 * Déterminer le chemin de l'url crawlée, le paramètre headers
 * Envoyer une demande : En utilisant le module de demande de données requests et *headers*, nous envoyons une requête pour l'adresse url du paquet que nous trouvons et obtenons les données de la réponse
 * Analyser les données : extraire le contenu des données que nous voulons
